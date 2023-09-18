@@ -1,0 +1,220 @@
+<!-- Nabila A'idah Diani / 5025211032 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computer Graphics Assignment 2</title>
+
+    <style>
+      body {
+        background-color: #e8e8e8;
+      }
+      canvas {
+        background-color: white;
+        display: block;
+      }
+      #canvasholder {
+        border: 2px solid black;
+        float: left;
+      }
+    </style>
+
+    <script>
+      let g;
+
+      function circle() {
+        g.beginPath();
+        g.arc(0, 0, 50, 0, 2 * Math.PI, false);
+        g.fill();
+      }
+
+      function square() {
+        g.fillRect(-50, -50, 100, 100);
+      }
+
+      function triangle() {
+        g.beginPath();
+        g.moveTo(-50, 50);
+        g.lineTo(50, 50);
+        g.lineTo(0, -1);
+        g.closePath();
+        g.fill();
+      }
+
+      function draw() {
+        g.fillStyle = "white";
+        g.fillRect(0, 0, 600, 600);
+        g.fillStyle = "black";
+
+        g.save();
+        g.translate(300, 110);
+        g.scale(1, 1.2);
+        triangle();
+        g.restore();
+
+        g.save();
+        g.translate(400, 260);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(300, 260);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(200, 260);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(300, 220);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(300, 170);
+        g.fillStyle = "white";
+        g.scale(0.4, 0.4);
+        circle();
+        g.restore();
+
+        // WINDOWS START
+
+        g.save();
+        g.translate(180, 240);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(220, 240);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(180, 285);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(220, 285);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(380, 240);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(380, 285);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(420, 240);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(420, 285);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        square();
+        g.restore();
+
+        // WINDOWS END
+
+        g.save();
+        g.translate(300, 240);
+        g.fillStyle = "white";
+        g.scale(0.3, 0.3);
+        circle();
+        g.restore();
+
+        g.save();
+        g.translate(300, 255);
+        g.rotate(300); // Rotate by 90 degrees
+        g.scale(0.3, 0.3);
+        g.fillStyle = "white";
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(300, 280);
+        g.rotate(300); // Rotate by 90 degrees
+        g.scale(0.3, 0.3);
+        g.fillStyle = "white";
+        square();
+        g.restore();
+
+        g.save();
+        g.translate(300, 295);
+        g.rotate(300); // Rotate by 90 degrees
+        g.scale(0.3, 0.3);
+        g.fillStyle = "white";
+        square();
+        g.restore();
+
+        g.save();
+        g.fillStyle = "red";
+        g.translate(300, 360);
+
+        g.save();
+        g.scale(5, 1);
+        square();
+        g.restore();
+
+        g.restore();
+
+        g.font = "40px Arial";
+        g.fillStyle = "black";
+        g.textAlign = "center";
+        g.fillText("Grafika Kelas A 2023", canvas.width / 2, canvas.height / 1.6);
+      }
+
+      function init() {
+        try {
+          let canvas = document.getElementById("canvas");
+          g = canvas.getContext("2d");
+        } catch (e) {
+          document.getElementById("canvasholder").innerHTML = "<p>Canvas graphics is not supported.<br>" + "An error occurred while initializing graphics.</p>";
+          return;
+        }
+        draw();
+      }
+
+      window.onload = init;
+    </script>
+  </head>
+  <body>
+    <h1>Rule Lulu Damara</h1>
+    <h2>Computer Graphics Lab 1: Transformed Shapes</h2>
+
+    <noscript>
+      <!-- This message will be shown in the page if JavaScript is not available. -->
+      <p>JavaScript is required to use this page.</p>
+    </noscript>
+
+    <div id="canvasholder">
+      <canvas id="canvas" width="600" height="600"> Canvas not supported. </canvas>
+    </div>
+  </body>
+</html>
